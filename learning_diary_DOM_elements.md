@@ -2,7 +2,7 @@ TASK 3: ul
 
 ul = unordered list; man benutzt es wenn man etwas aufzählen möchte bei dem die Reihenfolge erstmals egal ist
 
-Es gibt noch ol (Nummerierte Liste) und li (einzelnes Element)
+Es gibt noch ol (=Nummerierte Liste) und li (=einzelnes Element)
 
 z.B. ul ist der äußere Kontainer und li sind die einzelnen Elemente
 <ul id="myList">
@@ -12,7 +12,8 @@ z.B. ul ist der äußere Kontainer und li sind die einzelnen Elemente
 </ul>
 
 Parameter-Erklärung
-In JavaScript greift man mit const myList = document.getElementById("myList"); auf die Liste zu. Folgende Parameter sind dabei am wichtigsten:
+In JavaScript greift man mit const myList = document.getElementById("myList"); auf die Liste zu. 
+Folgende Parameter sind dabei am wichtigsten:
 
 Struktur & Navigation:
 -childElementCount: Gibt als Zahl zurück, wie viele Einträge (<li>) in der Liste sind.
