@@ -11,3 +11,16 @@ Bulletpoints:
 -I can use it to change, add, or remove things on the webpage.
 
 TASK 2
+How can I access the list "myList" in the html file?
+Use document.getElementById("myList") to access the list in the HTML.
+
+How can I change the list "myList" in the html file?
+To change the list "myList", select it with 
+const list = document.getElementById("myList") 
+and use one of these methods:
+
+-Add a new item: Create an element with document.createElement("li"), set its text, and add it using list.appendChild(newItem).
+
+-Overwrite all items: Replace the content directly using list.innerHTML = "<li>Item 1</li><li>Item 2</li>".
+
+-Remove an item: Delete a specific child element using list.removeChild(list.lastElementChild).
