@@ -12,9 +12,11 @@ z.B. ul ist der äußere Kontainer und li sind die einzelnen Elemente
 </ul>
 
 Parameter-Erklärung
-In JavaScript greift man mit const myList = document.getElementById("myList"); auf die Liste zu. 
-Folgende Parameter sind dabei am wichtigsten:
+In JavaScript greift man mit 
+const myList = document.getElementById("myList"); 
+auf die Liste zu. 
 
+Folgende Parameter sind dabei am wichtigsten:
 Struktur & Navigation:
 -childElementCount: Gibt als Zahl zurück, wie viele Einträge (<li>) in der Liste sind.
 -firstElementChild / lastElementChild: Greift direkt auf den allerersten oder den allerletzten Listenpunkt zu.
