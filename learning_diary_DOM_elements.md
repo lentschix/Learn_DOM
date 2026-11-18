@@ -50,3 +50,22 @@ Konfiguration & Versand:
 - action: Liest oder ändert die Ziel-URL, an die die Formulardaten beim Absenden geschickt werden.
 - method: Liest oder ändert die HTTP-Übertragungsmethode (meist "get" oder "post").
 - noValidate: Ein Wahrheitswert (true/false), der festlegt, ob die eingebaute HTML5-Validierung (wie required oder type="email") beim Absenden übersprungen werden soll.
+
+*TASK 5 button*
+button = Schaltfläche; man benutzt es, um Aktionen auszulösen – entweder um ein Formular abzuschicken oder um per JavaScript Funktionen (z. B. ein Menü öffnen, Daten berechnen) zu starten.
+
+z. B. <button> ist das klickbare Element selbst und umschließt den angezeigten Text (oder sogar Icons):
+
+Button in HTML:
+<button id="myBtn" type="button" name="actionBtn" value="start">Klick mich</button>
+
+In JS greift man mit:
+const myBtn = document.getElementById("myBtn");
+
+Status & Verhalten:
+- disabled: Ein Wahrheitswert (true/false), der den Button deaktiviert (ausgraut und nicht mehr klickbar macht) oder wieder aktiviert.s
+- type: Liest oder ändert das Standardverhalten des Buttons ("submit", "reset" oder "button"). Wichtig: Innerhalb eines <form> ist "submit" der Standard!
+
+Inhalt & Werte:
+- textContent / innerText: Liest oder ändert den sichtbaren Text auf dem Button (z. B. von "Speichern" auf "Gespeichert!").
+- value / name: Speichert einen internen Wert und Namen, die mitgeschickt werden, falls der Button ein Formular absendet.
