@@ -154,9 +154,34 @@ Struktur & Bereiche:
 - tBodies: Gibt eine Sammlung aller <tbody>-Bereiche zurück (meist myTable.tBodies[0]).
 - caption: Liest oder setzt das <caption>-Element (die Tabellenüberschrift).
 
-Wichtige Methoden (zum „Herumspielen“):
-- insertRow(index): Fügt an der angegebenen Position eine neue leere Zeile (<tr>) hinzu und gibt sie direkt zurück (mit -1 wird sie ganz unten angehängt).
-- deleteRow(index): Löscht die Zeile an der angegebenen Index-Position (z. B. myTable.deleteRow(1) löscht die zweite Zeile).
-- createCaption() / deleteCaption(): Erstellt automatisch eine Tabellenüberschrift oder entfernt sie.
-
 (Hinweis zu den Zeilen selbst: Jedes <tr> hat zusätzlich cells zum Auslesen der Zellen und insertCell(index) zum Einfügen neuer <td>-Zellen.)
+
+*Task 5 select/option*
+select = Dropdown-Auswahlliste; man benutzt es, um dem Benutzer eine vordefinierte Liste von Auswahlmöglichkeiten anzubieten (entweder als Einzelauswahl oder mit multiple als Mehrfachauswahl).
+
+option = einzelner Auswahlpunkt innerhalb des <select>-Menüs. Außerdem gibt es noch optgroup (=Gruppierung mehrerer Optionen unter einer nicht anklickbaren Zwischenüberschrift).
+
+z. B. select ist der äußere Kontainer und option sind die einzelnen Auswahlpunkte darin:
+HTML
+<label for="courseSelect">Kurs wählen:</label>
+<select id="courseSelect" name="course">
+    <option value="js">JavaScript Basics</option>
+    <option value="tdd" selected>Test-Driven Development</option>
+    <option value="sql">Datenbanken & SQL</option>
+</select>
+
+in JavaScript:
+const mySelect = document.getElementById("courseSelect");
+
+Beim <select>-Element:
+- value: Liest den value-Wert der aktuell ausgewählten <option> aus (z. B. "tdd") oder wählt per Zuweisung direkt eine bestimmte Option aus (mySelect.value = "sql").
+- selectedIndex: Gibt die Index-Position (beginnend bei 0) der aktuell gewählten Option als Zahl zurück (oder -1, falls nichts gewählt ist).
+- options: Gibt eine Sammlung (HTMLOptionsCollection) aller enthaltenen <option>-Elemente zurück.
+- selectedOptions: Gibt eine Liste aller gewählten Optionen zurück (besonders nützlich, wenn das Attribut multiple gesetzt ist).
+- length: Gibt als Zahl zurück, wie viele <option>-Einträge im Dropdown vorhanden sind.
+- multiple / disabled: Wahrheitswerte (true/false), um Mehrfachauswahl zu erlauben oder das gesamte Dropdown zu sperren.
+
+Beim einzelnen <option>-Element (z. B. mySelect.options[0]):
+- text: Der sichtbare Text im Dropdown (z. B. "JavaScript Basics").
+- value: Der interne Wert, der beim Absenden übertragen wird (z. B. "js").
+- selected: Ein Wahrheitswert (true/false), der angibt, ob genau diese Option gerade ausgewählt ist.
