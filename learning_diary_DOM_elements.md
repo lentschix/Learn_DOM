@@ -69,3 +69,28 @@ Status & Verhalten:
 Inhalt & Werte:
 - textContent / innerText: Liest oder ändert den sichtbaren Text auf dem Button (z. B. von "Speichern" auf "Gespeichert!").
 - value / name: Speichert einen internen Wert und Namen, die mitgeschickt werden, falls der Button ein Formular absendet.
+
+*TASK 5: input*
+input = Eingabefeld; man benutzt es, um verschiedene Arten von Daten vom Benutzer abzufragen (Text, Passwörter, Zahlen, Checkboxen, Datum usw.).
+
+Es gibt noch textarea (=mehrzeiliges Textfeld), select (=Dropdown-Auswahl) und label (=Beschriftung für das Eingabefeld).
+
+z. B. <input> ist ein alleinstehendes Tag (hat kein schließendes </input>) und wird über das type-Attribut gesteuert:
+
+HTML:
+<label for="ageInput">Alter:</label>
+<input id="ageInput" type="number" name="age" value="25" min="18" max="99" placeholder="Dein Alter">
+
+JavaScript:
+const myInput = document.getElementById("ageInput");
+
+Wert & Inhalt:
+- value: Liest den aktuell eingegebenen Wert als String aus oder setzt ihn neu (selbst bei type="number" liefert .value einen String!).
+- valueAsNumber: Gibt den Wert direkt als echte Zahl (Number) zurück (funktioniert bei type="number" oder type="date").
+- checked: Ein Wahrheitswert (true/false), der nur bei type="checkbox" oder type="radio" angibt, ob das Feld angehakt ist.
+
+Konfiguration & Einschränkungen:
+- type: Liest oder ändert die Art des Eingabefelds (z. B. von "password" auf "text", um ein Passwort sichtbar zu machen).
+- placeholder: Liest oder ändert den grauen Hinweistext, der erscheint, solange das Feld leer ist.
+- disabled / readOnly: Mit disabled = true wird das Feld komplett gesperrt und ausgegraut; mit readOnly = true kann der Benutzer den Wert zwar sehen und kopieren, aber nicht bearbeiten.
+- equired / min / max: Legt Validierungsregeln fest (Pflichtfeld, Minimal- oder Maximalwert).
