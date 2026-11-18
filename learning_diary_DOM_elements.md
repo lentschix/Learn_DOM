@@ -94,3 +94,27 @@ Konfiguration & Einschränkungen:
 - placeholder: Liest oder ändert den grauen Hinweistext, der erscheint, solange das Feld leer ist.
 - disabled / readOnly: Mit disabled = true wird das Feld komplett gesperrt und ausgegraut; mit readOnly = true kann der Benutzer den Wert zwar sehen und kopieren, aber nicht bearbeiten.
 - equired / min / max: Legt Validierungsregeln fest (Pflichtfeld, Minimal- oder Maximalwert).
+
+*Task 5: div*
+div = Division (Bereich/Container); man benutzt es als neutralen Block-Container, um andere HTML-Elemente zu gruppieren, Layouts zu strukturieren oder gemeinsam mit CSS und JavaScript zu gestalten. Es hat selbst keine spezielle semantische Bedeutung.
+
+z. B. div umschließt andere Elemente wie Überschriften und Absätze als gemeinsamer Block:
+HTML:
+<div id="myBox" class="card active" data-category="info">
+    <h2>Titel</h2>
+    <p>Das ist ein Text im Container.</p>
+</div>
+
+In JavaScript:
+const myBox = document.getElementById("myBox");
+
+Da ein <div> keine eigenen Formular- oder Listen-Spezialparameter hat, nutzt man hier vor allem die allgemeinen HTMLElement-Eigenschaften:
+
+Inhalt & Struktur:
+- innerHTML: Liest oder ersetzt den gesamten HTML-Code innerhalb des <div> (inklusive Unter-Tags wie <p> oder <h2>).
+- textContent: Liest oder ändert nur den reinen Text innerhalb des Containers (ignoriert HTML-Tags und ist sicherer gegen XSS).
+- children / childElementCount: Gibt alle enthaltenen Kind-Elemente zurück bzw. zählt, wie viele Elemente im <div> liegen.
+
+Styling & Klassen:
+- classList: Ermöglicht das gezielte Hinzufügen (add), Entfernen (remove) oder Umschalten (toggle) von CSS-Klassen, ohne bestehende Klassen zu überschreiben.
+- style: Ermöglicht den direkten Zugriff auf Inline-CSS-Eigenschaften (z. B. myBox.style.backgroundColor = "lightblue" oder myBox.style.display = "none" zum Verstecken).
