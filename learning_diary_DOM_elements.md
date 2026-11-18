@@ -118,3 +118,45 @@ Inhalt & Struktur:
 Styling & Klassen:
 - classList: Ermöglicht das gezielte Hinzufügen (add), Entfernen (remove) oder Umschalten (toggle) von CSS-Klassen, ohne bestehende Klassen zu überschreiben.
 - style: Ermöglicht den direkten Zugriff auf Inline-CSS-Eigenschaften (z. B. myBox.style.backgroundColor = "lightblue" oder myBox.style.display = "none" zum Verstecken).
+
+*Task 5: Table*
+table = Tabelle; man benutzt es, um tabellarische Daten strukturiert in Zeilen und Spalten darzustellen (nicht mehr für Seiten-Layouts, dafür nimmt man heute CSS Grid/Flexbox).
+
+Es gibt noch thead (=Tabellenkopf), tbody (=Tabellenkörper), tfoot (=Tabellenfuß), tr (=Tabellenzeile / table row), th (=Kopfzelle / table header) und td (=Datenzelle / table data).
+
+z. B. table ist der äußere Kontainer, tr bildet die Zeilen und th/td die einzelnen Zellen darin:
+HTML:
+<table id="myTable">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Punkte</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Anna</td>
+            <td>95</td>
+        </tr>
+        <tr>
+            <td>Lukas</td>
+            <td>88</td>
+        </tr>
+    </tbody>
+</table>
+
+In JavaScript:
+const myTable = document.getElementById("myTable");
+
+Struktur & Bereiche:
+- rows: Gibt eine Sammlung (HTMLCollection) aller <tr>-Zeilen in der gesamten Tabelle zurück (inklusive Kopf- und Fußzeilen). Man kann per Index darauf zugreifen (z. B. myTable.rows[0]).
+- tHead / tFoot: Greift direkt auf das <thead>- bzw. <tfoot>-Element der Tabelle zu (oder gibt null zurück, falls keines existiert).
+- tBodies: Gibt eine Sammlung aller <tbody>-Bereiche zurück (meist myTable.tBodies[0]).
+- caption: Liest oder setzt das <caption>-Element (die Tabellenüberschrift).
+
+Wichtige Methoden (zum „Herumspielen“):
+- insertRow(index): Fügt an der angegebenen Position eine neue leere Zeile (<tr>) hinzu und gibt sie direkt zurück (mit -1 wird sie ganz unten angehängt).
+- deleteRow(index): Löscht die Zeile an der angegebenen Index-Position (z. B. myTable.deleteRow(1) löscht die zweite Zeile).
+- createCaption() / deleteCaption(): Erstellt automatisch eine Tabellenüberschrift oder entfernt sie.
+
+(Hinweis zu den Zeilen selbst: Jedes <tr> hat zusätzlich cells zum Auslesen der Zellen und insertCell(index) zum Einfügen neuer <td>-Zellen.)
