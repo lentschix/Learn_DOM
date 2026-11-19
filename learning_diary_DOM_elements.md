@@ -185,3 +185,29 @@ Beim einzelnen <option>-Element (z. B. mySelect.options[0]):
 - text: Der sichtbare Text im Dropdown (z. B. "JavaScript Basics").
 - value: Der interne Wert, der beim Absenden übertragen wird (z. B. "js").
 - selected: Ein Wahrheitswert (true/false), der angibt, ob genau diese Option gerade ausgewählt ist.
+
+*TASK 5: canvas*
+canvas = Zeichenfläche (Leinwand); man benutzt es, um per JavaScript dynamisch 2D-Grafiken, Diagramme, Animationen oder ganze Spiele direkt im Browser zu zeichnen. Ohne JavaScript ist <canvas> einfach nur ein leeres, durchsichtiges Rechteck.
+
+z. B. <canvas> braucht eine Breite (width) und Höhe (height), damit die Zeichenfläche nicht verzerrt wird:
+HTML: 
+<canvas id="myCanvas" width="400" height="200" style="border: 1px solid black;">
+    Dein Browser unterstützt kein Canvas.
+</canvas>
+
+JavaScript:
+const myCanvas = document.getElementById("myCanvas");
+
+Beim <canvas>-Element selbst:
+- width / height: Liest oder ändert die interne Auflösung der Zeichenfläche in Pixeln (Standardwert ist 300 x 150, falls nichts im HTML steht). Wichtig: Wenn man width oder height per JS neu setzt, wird die gesamte Zeichenfläche komplett geleert!
+
+Wichtige Methoden am <canvas>-Element:
+- getContext("2d"): Gibt das Zeichen-Objekt (CanvasRenderingContext2D) zurück, mit dem man Formen, Linien, Texte und Bilder zeichnen kann (für 3D gibt es "webgl").
+- toDataURL(): Exportiert alles, was aktuell auf das Canvas gezeichnet wurde, als fertiges Bild (Base64-Data-URL, z. B. als PNG), um es herunterzuladen oder in einem <img> anzuzeigen.
+
+Die wichtigsten Parameter & Methoden am 2D-Kontext (ctx):
+- fillStyle / strokeStyle: Legt die Füllfarbe bzw. Linienfarbe fest (z. B. "blue" oder "#ff0000").
+- lineWidth: Bestimmt die Dicke der gezeichneten Linien in Pixeln.
+- fillRect(x, y, width, height): Zeichnet direkt ein ausgefülltes Rechteck an den Koordinaten (x, y) (oben links ist 0, 0).
+- clearRect(x, y, width, height): Radiert einen bestimmten Bereich wieder komplett transparent (wird bei Animationen vor jedem neuen Frame genutzt).
+- arc(...) / beginPath() / stroke(): Wird genutzt, um Kreise, Bögen und eigene Pfade/Linien zu zeichnen.
